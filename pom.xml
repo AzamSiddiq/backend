@@ -26,8 +26,8 @@
 
   <properties>
     <!-- build settings -->
-    <minimumMavenVersion>3.3</minimumMavenVersion>
-    <java.version>11</java.version>
+    <minimumMavenVersion>3.8</minimumMavenVersion>
+    <java.version>21</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -56,7 +56,7 @@
     <commons-compress.version>1.22</commons-compress.version>
     <commons-io.version>2.11.0</commons-io.version>
     <copy_down.version>1.1</copy_down.version>
-    <dropwizard.version>2.1.5</dropwizard.version>
+    <dropwizard.version>4.0.4</dropwizard.version>
     <dwc-api.version>1.47</dwc-api.version>
     <dwca-io.version>2.13</dwca-io.version>
     <elasticsearch.version>8.1.3</elasticsearch.version>
@@ -81,6 +81,7 @@
     <kryo.version>5.4.0</kryo.version>
     <kryo-reflectasm.version>1.11.9</kryo-reflectasm.version>
     <logstash-logback.version>6.4</logstash-logback.version>
+    <lombok.version>1.18.30</lombok.version>
     <mapdb.version>3.0.9</mapdb.version>
     <mockito.version>3.1.0</mockito.version>
     <mybatis.version>3.5.13</mybatis.version>
@@ -103,22 +104,22 @@
     <univocity-parsers.version>2.9.1</univocity-parsers.version>
 
     <!-- Maven plugin versions. Check for available updates: mvn versions:display-plugin-updates -->
-    <depgraph-maven-plugin>3.3.0</depgraph-maven-plugin>
+    <depgraph-maven-plugin>4.0.2</depgraph-maven-plugin>
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
     <jaxb2_commons.version>0.12.0</jaxb2_commons.version>
-    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+    <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
-    <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
+    <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
+    <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
     <maven-git-commit-id-plugin.version>4.9.10</maven-git-commit-id-plugin.version>
-    <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
-    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
-    <maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
-    <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
-    <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
-    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
-    <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
+    <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
+    <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+    <maven-release-plugin.version>3.0.1</maven-release-plugin.version>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
+    <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+    <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
+    <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
     <xjc-guava-plugin.version>0.3</xjc-guava-plugin.version>
 
     <!-- default maven properties to define the postgres server for running tests.
@@ -408,6 +409,13 @@
         <artifactId>jaxb-impl</artifactId>
         <version>${jakarta.xml.version}</version>
         <scope>runtime</scope>
+      </dependency>
+      <!-- transient Lombok fails with java21 below this version -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <optional>true</optional>
       </dependency>
 
       <!-- Tvelve Monkeys image format extensions -->
