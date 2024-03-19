@@ -81,8 +81,7 @@
     <mockito.version>3.3.3</mockito.version>
     <mybatis.version>3.5.13</mybatis.version>
     <name-parser.version>3.11.0</name-parser.version>
-    <neo4j-algorithms.version>3.4.0.0</neo4j-algorithms.version>
-    <neo4j.version>3.4.17</neo4j.version>
+    <neo4j.version>5.18.1</neo4j.version>
     <newick-io.version>1.0.6</newick-io.version>
     <pgbulkinsert.version>8.1.2</pgbulkinsert.version>
     <poi.version>5.2.3</poi.version>
@@ -582,13 +581,8 @@
       </dependency>
       <dependency>
         <groupId>org.neo4j</groupId>
-        <artifactId>neo4j-slf4j</artifactId>
+        <artifactId>neo4j-graph-algo</artifactId>
         <version>${neo4j.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.neo4j</groupId>
-        <artifactId>graph-algorithms-algo</artifactId>
-        <version>${neo4j-algorithms.version}</version>
       </dependency>
 
       <!-- mapdb & kryo -->
